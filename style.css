@@ -34,3 +34,86 @@ svg {
     height: auto;
     display: block;
 }
+
+/* style.css */
+
+ .c-dialog {
+    position: fixed;
+    background-color: #212121; 
+    color: #b3b3b3;
+    padding: 20px;
+    border: 2px solid #64fcda; 
+    border-radius: 10px;
+    box-shadow: none; 
+    z-index: 1000;
+    width: 300px;
+    color: white;
+}
+
+.c-dialog__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.c-closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #64fcda; 
+}
+
+.c-closeButton:hover {
+    color: #ff00a5; 
+}
+
+.c-dialogTitle {
+    margin: 0;
+    color: #64fcda; 
+}
+
+.c-dialogBody {
+    margin: 0;
+} 
+
+@keyframes fade-in {
+    from{
+        opacity: 0;
+        
+        }
+}
+
+@keyframes fade-out {
+    to{
+        opacity: 0;
+        
+    }
+}
+
+@keyframes pop-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes pop-out {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+
+ ::view-transition-old(dialog-box){
+    animation: 300ms ease both fade-out;
+}  
+
+::view-transition-new(dialog-box){
+    animation: 300ms ease both fade-in;
+}
